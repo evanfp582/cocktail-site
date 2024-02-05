@@ -1,0 +1,10 @@
+cocktail_id,ingredient_name,optional,amount
+0,bourbon whiskey,0,2 oz
+0,simple syrup,0,0.5 oz
+0,angostura bitters,0,2 dashes
+0,orange peel,1,1 twist
+1,blanco tequila,0,2 oz
+1,lime juice,0,1 oz
+1,agave syrup,0,0.5 oz
+1,orange liqueur,0,0.5 oz
+1,salt,1,1 pinch

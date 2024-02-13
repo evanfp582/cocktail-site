@@ -10,5 +10,8 @@ cocktail_id,ingredient_name,optional,amount
 1,salt,1,1 pinch
 2,gin,0,1 oz
 2,campari,0,1 oz
-2, sweet vermouth,0,1 oz
-2, orange peel,1,garnish
+2,sweet vermouth,0,1 oz
+2,orange peel,1,garnish
+3,prosecco,0,3 oz
+3,aperol,0,2 oz
+3,orange slice,1,garnish

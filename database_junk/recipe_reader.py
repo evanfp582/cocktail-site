@@ -34,3 +34,4 @@ for index, row in cocktail_ingredients_pd.iterrows():
 for cocktail in cocktails:
     print_cocktail(cocktail)
 
+

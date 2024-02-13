@@ -6,5 +6,9 @@ cocktail_id,ingredient_name,optional,amount
 1,blanco tequila,0,2 oz
 1,lime juice,0,1 oz
 1,agave syrup,0,0.5 oz
-1,orange liqueur,0,0.5 oz
+1,cointreau,0,0.5 oz
 1,salt,1,1 pinch
+2,gin,0,1 oz
+2,campari,0,1 oz
+2, sweet vermouth,0,1 oz
+2, orange peel,1,garnish

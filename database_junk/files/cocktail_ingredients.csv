@@ -94,3 +94,11 @@ cocktail_id,ingredient_name,optional,amount
 25,bourbon whiskey,0,2 oz
 25,lemon juice,0,1 oz
 25,simple syrup,0,1 oz
+26,elderflower liqueur,0,1 oz
+26,bourbon whiskey,0,1 oz
+26,creme de cassis,0,0.5 oz
+26,lemon juice,0,0.25 oz
+27,gin,0,2 oz
+27,lemon juice,0,0.75 oz
+27,elderflower liqueur,0,0.5 oz
+27,simple syrup,0,0.25 oz

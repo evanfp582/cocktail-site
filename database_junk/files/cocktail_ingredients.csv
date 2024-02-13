@@ -102,3 +102,13 @@ cocktail_id,ingredient_name,optional,amount
 27,lemon juice,0,0.75 oz
 27,elderflower liqueur,0,0.5 oz
 27,simple syrup,0,0.25 oz
+28,gin,0,2 oz
+28,lemon juice,0,1 oz
+28,simple syrup,0,0.33 oz
+28,creme de mure,0,0.5 oz
+28,blackberry,1,garnish
+29,gin,0,2 oz
+29,lemon juice,0,1 oz
+29,simple syrup,0,0.5 oz
+29,raspberry liqueur,0,0.5 oz
+29,lemon peel,1,garnish

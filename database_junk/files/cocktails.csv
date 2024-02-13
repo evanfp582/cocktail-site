@@ -1,5 +1,27 @@
-id,name,description,directions
-0,Old Fashioned,A classic bourbon cocktail,Combine all ingredients in a glass with ice and stir well.
-1,Margarita,A classic tequila cocktail,Combine all ingredients in a shaker with ice and shake well. Strain into a glass with ice.
-2,Negroni,A classic,Mix shake and pour
-3,Aperol Spritz,Refreshing!,Add to a glass and stir
+id,name,description,directions,website_link
+0,Old Fashioned,"""A classic bourbon cocktail""","""Combine all ingredients in a glass with ice and stir well.""","""https://www.liquor.com/recipes/old-fashioned/"""
+1,Margarita,"""A classic tequila cocktail""","""Combine all ingredients in a shaker with ice and shake well. Strain into a glass with ice.""","""https://www.liquor.com/recipes/margarita/"""
+2,Negroni,"""A classic gin cocktail""","""Mix, shake, and pour""","""https://www.liquor.com/recipes/negroni/"""
+3,Aperol Spritz,"""Refreshing!""","""Add to a glass and stir""","""https://www.liquor.com/recipes/aperol-spritz/"""
+4,Alexander,"""An IBA unforgettable""","""Pour all ingredients into cocktail shaker filled with ice cubes. Shake and strain into a chilled cocktail glass.""","""https://en.wikipedia.org/wiki/Alexander_(cocktail)"""
+5,Americano,"""An IBA unforgettable""","""Pour, stir, and serve""","""https://en.wikipedia.org/wiki/Americano_(cocktail)"""
+6,Bee's Knees,"""An IBA unforgettable""","""Mix, Shake, and Serve""","""https://en.wikipedia.org/wiki/Bee%27s_Knees_(cocktail)"""
+7,Angel Face,"""An IBA unforgettable""","""Mix, Shake, and Serve""","""https://en.wikipedia.org/wiki/Angel_Face_(cocktail)"""
+8,Aviation,"""An IBA unforgettable""","""Mix, Shake, and Serve""","""https://en.wikipedia.org/wiki/Aviation_(cocktail)"""
+9,Between The Sheets,"""An IBA unforgettable""","""Mix, Shake, and Serve""","""https://en.wikipedia.org/wiki/Between_the_Sheets_(cocktail)"""
+10,Boulevardier,"""An IBA unforgettable""","""Mix, Stir, and Serve""","""https://en.wikipedia.org/wiki/Boulevardier_(cocktail)"""
+11,Clover Club,"""An IBA unforgettable""","""Dry shake. Wet shake then serve""","""https://en.wikipedia.org/wiki/Clover_Club_cocktail"""
+12,Daiquiri,"""An IBA unforgettable""","""Mix, Shake, and Serve""","""https://en.wikipedia.org/wiki/Daiquiri"""
+13,Dry Martini,"""An IBA unforgettable""","""Pour all ingredients into mixing glass with ice cubes. Stir well. Strain into chilled martini cocktail glass.""","""https://en.wikipedia.org/wiki/Martini_(cocktail)"""
+14,Hanky Panky,"""An IBA unforgettable""","""Stirred over ice, strained into a chilled glass, garnished, and served up.""","""https://en.wikipedia.org/wiki/Hanky_panky_(cocktail)"""
+15,Gin Fizz,"""An IBA unforgettable""","""Shake all ingredients with ice cubes, except soda water. Pour into glass. Top with soda water.""","""https://en.wikipedia.org/wiki/Fizz_(cocktail)#Gin_fizz"""
+16,Fernandito,"""An IBA New Era drink""","""Pour all ingredients into glass and briefly stir""","""https://www.diffordsguide.com/cocktails/recipe/17620/fernandito"""
+17,Woo Woo,"""Fruity cranberry laced with vodka and sweet peach liqueur. A quaffable cocktail from the 1980s.""","""Shake and Pour""","""https://www.diffordsguide.com/cocktails/recipe/2110/woo-woo"""
+18,Slippery Nipple,"""A shot""","""Layer in the glass from bottom to top: grenadine, sambuca, irish cream liqueur""","""https://www.diffordsguide.com/cocktails/recipe/1779/slippery-nipple"""
+19,French 76,"""Refreshing!""","""Shake all but champagne, then top with it""","""https://www.diffordsguide.com/cocktails/recipe/791/french-76"""
+20,Bourbon Cider Sour,"""Gonna be sweet""","""Combine the bourbon, apple cider, orange juice, and simple syrup. Stir. Serve over ice with an apple slice.""","""https://www.thecocktailproject.com/drink-recipes/bourbon-cider-sour/"""
+21,Gimlet,"""The Gimlet follows the basic sour template of spirit, citrus, and sugar. This combination features prominently in so many drinks throughout history because of how flexible it is, and how well it works.""","""Add the gin, lime juice and simple syrup to a shaker with ice and shake until well-chilled.""","""https://www.liquor.com/recipes/gimlet/"""
+22,Emerson,"""The Emerson is a classic cocktail consisting of gin, sweet vermouth, maraschino liqueur, and lime juice. It's a close relative of the Martinez, itself considered a possible forebearer of the Martini.""","""Mix, Shake, and Pour""","""https://www.liquor.com/emerson-cocktail-recipe-8572484"""
+23,Espresso Martini,"""Ladies love espresso martinis""","""Mix, Shake, and Pour""","""https://www.liquor.com/recipes/espresso-martini-2/"""
+24,Manhattan,"""A Classic Cocktail""","""Mix, Shake, and Pour""","""https://www.liquor.com/recipes/manhattan-2/"""
+25,Whiskey Sour,"""The whiskey sour is a sour cocktail made with whiskey, lemon juice, and simple syrup. It's often served with an egg white foam, in which case it's sometimes called a Boston Sour.""","""Mix, Shake, and Pour""","""https://www.acouplecooks.com/whiskey-sour/"""

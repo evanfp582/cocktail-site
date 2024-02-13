@@ -15,3 +15,82 @@ cocktail_id,ingredient_name,optional,amount
 3,prosecco,0,3 oz
 3,aperol,0,2 oz
 3,orange slice,1,garnish
+4,gin,0,1 oz
+4,creme de cacao,0,1 oz
+4,cream,0,1 oz
+5,campari,0,1 oz
+5,sweet vermouth,0,1 oz
+5,soda water,0,1 splash
+6,gin,0,2 oz
+6,lemon juice,0,1 oz
+6,honey syrup,0,1 oz
+6,lemon peel,1,garnish
+7,gin,0,1 oz
+7,calvados,0,1 oz
+7,apricot brandy,0,1 oz
+8,gin,0,1.5 oz
+8,maraschino luxardo,0,0.5 oz
+8,lemon juice,0,0.5 oz
+8,creme de violette,0,1 barspoon
+8,maraschino cherry,1,garnish
+9,light rum,0,0.75 oz
+9,cognac,0,0.75 oz
+9,cointreau,0,0.75 oz
+9,lemon juice,0,0.25 oz
+10,bourbon whiskey,0,1.5 oz
+10,campari,0,1 oz
+10,sweet vermouth,0,1 oz
+11,gin,0,1.5 oz
+11,lemon juice,0,0.5 oz
+11,raspberry syrup,0,0.5 oz
+11,egg white,0,1 egg
+12,light rum,0,2 oz
+12,lime juice,0,0.75 oz
+12,sugar,0,2 bar spoons
+13,gin,0,2 oz
+13,dry vermouth,0,0.33 oz
+14,gin,0,1.5 oz
+14,sweet vermouth,0,1.5 oz
+14,fernet branca,0,0.25 oz
+15,gin,0,1.5 oz
+15,lemon juice,0,1 oz
+15,simple syrup,0,0.33 oz
+15,soda water,0,1 splash
+15,lemon peel,1,garnish
+16,fernet branca,0,1.5 oz
+16,cola,0,3.5 oz
+17,vodka,0,1 oz
+17,peach schnapps,0,0.5 oz
+17,cranberry juice,0,2.33 oz
+17,peach bitters,1,2 dashes
+18,grenadine,0,0.25 oz
+18,sambuca,0,0.66 oz
+18,irish cream liqueur,0,0.66 oz
+19,vodka,0,1 oz
+19,lemon juice,0,0.5 oz
+19,simple syrup,0,0.25 oz
+19,champagne,0,3 oz
+19,maraschino cherry,1,garnish
+20,bourbon whiskey,0,2 oz
+20,apple cider,0,3 oz
+20,orange juice,0,1.5 oz
+20,simple syrup,0,0.75 oz
+21,gin,0,2.5 oz
+21,lime juice,0,0.5 oz
+21,simple syrup,0,0.5 oz
+21,lime wedge,1,garnish
+22,gin,0,1.5 oz
+22,sweet vermouth,0,1 oz
+22,lime juice,0,0.5 oz
+22,maraschino luxardo,0,0.25 oz
+23,vodka,0,2 oz
+23,coffee liqueur,0,0.5 oz
+23,espresso,0,1 oz
+23,simple syrup,0,0.25 oz
+24,rye whiskey,0,2 oz
+24,sweet vermouth,0,1 oz
+24,angostura bitters,0,2 dashes
+24,maraschino cherry,1,garnish
+25,bourbon whiskey,0,2 oz
+25,lemon juice,0,1 oz
+25,simple syrup,0,1 oz

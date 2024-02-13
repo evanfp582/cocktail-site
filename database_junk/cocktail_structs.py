@@ -6,11 +6,12 @@ import pandas as pd
 #Setup structs
 #Cocktail Struct: cocktail_id,cocktail_name,cocktail_description,cocktail_directions
 class Cocktail:
-    def __init__(self, cocktail_id, cocktail_name, cocktail_description, cocktail_directions):
+    def __init__(self, cocktail_id, cocktail_name, cocktail_description, cocktail_directions, website_link):
         self.id = cocktail_id
         self.name = cocktail_name
         self.description = cocktail_description
         self.directions = cocktail_directions
+        self.website_link = website_link
         self.cocktail_ingredients = []
 
 #Cocktail Ingredient Struct: cocktail_id,ingredient_name,optional,amount
@@ -40,6 +41,7 @@ def print_cocktail(input_cocktail):
     print("Name: " + capitalized_name)
     print("Description: " + input_cocktail.description)
     print("Directions: " + input_cocktail.directions)
+    print("Website Link: " + input_cocktail.website_link)
     print("Ingredients: ")
 
     for ingredient in input_cocktail.cocktail_ingredients:

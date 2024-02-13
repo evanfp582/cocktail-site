@@ -1,62 +1,81 @@
-ingredient_id,ingredient_name
-1,absinthe
-2,agave syrup
-3,aged rum
-4,anejo tequila
-5,angostura bitters
-6,aperol
-7,apple brandy
-8,apple cider
-9,applejack
-10,blanco tequila
-11,bourbon whiskey
-12,brandy
-13,campari
-14,champagne
-15,cherry liqueur
-16,cinnamon
-17,club soda
-18,coconut cream
-19,coffee liqueur
-20,cognac
-21,cranberry juice
-22,cream
-23,cucumber
-24,dark rum
-25,dry vermouth
-26,egg white
-27,elderflower liqueur
-28,fernet branca
-29,gin
-30,ginger ale
-31,ginger beer
-32,grapefruit juice
-33,grenadine
-34,honey
-35,lemon juice
-36,lemon peel
-37,light rum
-38,lime juice
-39,lime wedge
-40,maple syrup
-41,maraschino cherry
-42,mezcal
-43,mint leaf
-44,nutmeg
-45,orange bitters
-46,orange juice
-47,orange liqueur
-48,orange peel
-49,pineapple juice
-50,prosecco
-51,reposado tequila
-52,rumchata
-53,rye whiskey
-54,salt
-55,scotch
-56,simple syrup
-57,soda water
-58,sugar
-59,sweet vermouth
-60,tonic water
-61,vodka
+ingredient_name
+absinthe
+agave syrup
+aged rum
+anejo tequila
+angostura bitters
+aperol
+apple brandy
+apple cider
+applejack
+apricot brandy
+blanco tequila
+blueberry vodka
+bourbon whiskey
+brandy
+calvados
+campari
+champagne
+cherry liqueur
+cherry vodka
+cinnamon
+club soda
+coconut cream
+coconut rum
+coffee liqueur
+cognac
+cointreau
+cola
+cranberry juice
+cream
+creme de cacao
+creme de violette
+cucumber
+dark rum
+dry vermouth
+egg white
+elderflower liqueur
+espresso
+fernet branca
+gin
+ginger ale
+ginger beer
+grapefruit juice
+grenadine
+honey
+honey syrup
+irish cream liqueur
+lemon juice
+lemon peel
+light rum
+lime juice
+lime wedge
+maple syrup
+maraschino cherry
+maraschino luxardo
+mezcal
+mint leaf
+nutmeg
+orange bitters
+orange juice
+orange liqueur
+orange peel
+peach bitters
+peach schnapps
+peanut butter whiskey
+pineapple juice
+prosecco
+raspberry syrup
+reposado tequila
+rumchata
+rye whiskey
+salt
+sambuca
+scotch
+simple syrup
+soda water
+sugar
+sweet vermouth
+tonic water
+vanilla vodka
+vodka

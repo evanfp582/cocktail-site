@@ -1,3 +1,9 @@
+Required Modules:
+  Pandas- Data analysis and reading CSV
+    $ pip install pandas
+  Qt- UI
+    $ pip install pyside6
+    
 File Structure:
 - Files/ - contains the different CSV files for the different datasets
 - recipe_reader.py - Prints all the recipes in the dataset (combined from all the CSV files)

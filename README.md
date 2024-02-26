@@ -10,10 +10,10 @@ _Honestly I am a little iffy, but I think you just cd into client type `npm inst
   'npm run start'
 
 **Server**
-  'cd .\server\'
-  'npm run start'
+  `cd .\server\`
+  `npm run start`
 
 **Python DB UI**
   _This is best done in the CMD now in an IDE_
-  'cd .\database_junk\'
-  'python cocktail_add_gui.py'
+  `cd .\database_junk\`
+  `python cocktail_add_gui.py`

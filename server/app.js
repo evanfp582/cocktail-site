@@ -5,6 +5,9 @@ const app = express();
 var bodyParser=require("body-parser");
 const cors = require("cors");
 const port = process.env.PORT || 3000;
+const csv = require('csv-parser');
+const { Console } = require("console");
+
 
 var corsOptions = {
   origin: "http://localhost:8081"
@@ -57,9 +60,14 @@ app.post("/Login", (req, res) => {
 })
 
 app.get('/getAllDrinks', (req, res) => {
-  console.log("It made iasdasdasdt here")
-  getAllDrinks()
-  res.send({ message: countries })
+  const results = [];
+  const path = "../database_junk/files/cocktails.csv"
+  fs.createReadStream(path)
+  .pipe(csv())
+  .on('data', (data) => results.push(data))
+  .on('end', () => {
+    res.send({ message: results })
+  });
 })
 
 app.post("/shelf", (req, res) => {
@@ -74,19 +82,12 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
   Right now handled via hardcoded path to the cocktails.scv
 */
 function getAllDrinks() {
+  const results = [];
   const path = "../database_junk/files/cocktails.csv"
   fs.createReadStream(path)
-  .pipe(parse({ delimiter: ",", from_line: 1 }))
-  .on("data", function (row) {
-    // executed for each row of data
-    console.log(row);
-  })
-  .on("error", function (error) {
-    // Handle the errors
-    console.log(error.message);
-  })
-  .on("end", function () {
-    // executed when parsing is complete
-    console.log("File read successful");
-  });
-}
+  .pipe(csv())
+  .on('data', (data) => results.push(data))
+  .on('end', () => {
+    console.log("Here: ", results)
+    return results
+  });}

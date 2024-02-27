@@ -20,7 +20,7 @@ const fetchData = async () => {
   try {
     const response = await fetch("/getAllDrinks");
     const drinks = await response.json();
-    console.log(drinks.message)
+    console.log(drinks)
     setDrinks(drinks.message);
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -30,34 +30,35 @@ const fetchData = async () => {
 useEffect(() => {
   if (searchInput.length > 0) {
     setMatching(drinks.filter((drink) => {
-    return drink.name.match(searchInput);
+      var lowercase = drink.name.toLowerCase()
+    return lowercase.match(searchInput.toLowerCase());
     }));
   }else {
     setMatching([])
   }
-}, [searchInput])
+}, [drinks, searchInput])
 
 return <div>
     <input
       type="search"
-      placeholder="Search here"
+      placeholder="Enter Cocktail"
       onChange={handleChange}
       value={searchInput} />
 
     <table>
       <tbody>
         <tr>
-          <th>Country</th>
-          <th>Continent</th>
+          <th>Drink Name</th>
+          <th>Description</th>
         </tr>
       </tbody>
 
-    {matching.map((country, index) => {
+    {matching.map((drink, index) => {
 
     return <tbody key={index}>
       <tr>
-        <td>{country.name}</td>
-        <td>{country.continent}</td>
+        <td>{drink.name}</td>
+        <td>{drink.description}</td>
       </tr>
     </tbody>
     })}

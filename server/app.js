@@ -7,6 +7,7 @@ const cors = require("cors");
 const port = process.env.PORT || 3000;
 const csv = require('csv-parser');
 const { Console } = require("console");
+const path = require("path");
 
 
 var corsOptions = {
@@ -46,7 +47,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json());
 
 app.get("/api", (req, res) => {
-  res.send({ message: "Hello from Express!" });
+  res.send({ message: "Server is Online" });
 });
 
 app.post("/CreateDrinkFormSubmit", (req, res) => {
@@ -54,13 +55,35 @@ app.post("/CreateDrinkFormSubmit", (req, res) => {
   res.send({ message: "Submitted Drink" });
 })
 
+/*
+  Login function
+  Checks the users.csv for a match, if so return the {id, name}
+  else ???
+*/
 app.post("/Login", (req, res) => {
   console.log(req.body);
-  res.send({ message: "Logged in" });
+  const path = "../database_junk/files/users.csv"
+  result = []
+  fs.createReadStream(path)
+  .pipe(csv())
+  .on('data', (data) => {
+    if (data.name == req.body.loginData.username){
+        result.push(data)
+    }
+  })
+  .on('end', () => {
+    res.send({ message: result });
+  })
 })
 
+/*
+  Get all the drinks
+  Used for the search bar
+  With the small amount of data, this works, but in future
+  TODO make this get after each search
+*/
 app.get('/getAllDrinks', (req, res) => {
-  const results = [];
+  const results = []
   const path = "../database_junk/files/cocktails.csv"
   fs.createReadStream(path)
   .pipe(csv())
@@ -70,9 +93,25 @@ app.get('/getAllDrinks', (req, res) => {
   });
 })
 
+/*
+  Scans the shelf for things you own and returns them in an array
+*/
 app.post("/shelf", (req, res) => {
-  console.log(req.body);
-  res.send({ message: "This is where We look at the backend for ingredients that the user owns" });
+  console.log("shelp body", req.body);
+  const results = []
+  const path = "../database_junk/files/user_ingredients.csv"
+  fs.createReadStream(path)
+  .pipe(csv())
+  .on('data', (data) => {
+    console.log(data.user_id, req.body.username)
+    if (data.user_id == req.body.username){
+      results.push(data.ingredient_name)
+    }
+  })
+  .on('end', () => {
+    console.log(results)
+    res.send({ ingredients: results })
+  });
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

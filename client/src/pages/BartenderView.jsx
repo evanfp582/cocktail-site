@@ -3,6 +3,10 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import IconButton from '@mui/material/IconButton';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -14,6 +18,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const BartenderView= () => {
   const [drinkQueue, setDrinkQueue] = useState([])
+  const [selectedDrink, setSelectedDrink] = useState()
 
   useEffect(() => {
     setDrinkQueue(exampleDataJSON.orders)
@@ -32,16 +37,23 @@ const BartenderView= () => {
             <Item><h2>Drink Queue</h2></Item>
           </Grid>
 
-          {drinkQueue.map((order) => (
+          {drinkQueue.map((order, index) => (
             <>
-              <Grid item xs={6} md={4}>
-                <Item>{order.drink}</Item>
+              <Grid item md={3}>
+                <Item><Button style={{maxHeight: '10px'}} onClick={() => {setSelectedDrink(order.drink)}}>
+                  {order.drink}
+                </Button></Item>
               </Grid>
-              <Grid item xs={6} md={4}>
+              <Grid item md={3}>
                 <Item>{order.name}</Item>
               </Grid>
-              <Grid item xs={6} md={4}>
+              <Grid item md={3}>
                 <Item>{order.time}</Item>
+              </Grid>
+              <Grid item md={3}>
+                <Item><IconButton style={{maxHeight: '10px'}} aria-label="delete" disabled color="primary">
+                  <DeleteIcon />
+                </IconButton></Item>
               </Grid>
             </>
           ))}
@@ -53,6 +65,9 @@ const BartenderView= () => {
       <Item>
         <h2>Recipe for Selected Drink</h2>
       </Item>
+      <Container>
+        {selectedDrink ? selectedDrink : "No Selected Drink"}
+      </Container>
     </Grid>
     </Grid>
     </div>

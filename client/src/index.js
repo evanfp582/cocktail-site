@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import BartenderView from "./pages/BartenderView"
 import OrderView from "./pages/OrderView"
+import { disableReactDevTools } from '@fvilers/disable-react-devtools'
+
+if (process.env.NODE_END === 'production') disableReactDevTools()
 
 export default function Index() {
   return (

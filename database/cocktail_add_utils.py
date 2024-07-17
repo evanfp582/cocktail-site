@@ -14,13 +14,13 @@ def add_cocktail(cocktail_to_add):
 
 def write_to_cocktail_csv(cocktail_to_add):
     #Open the file and read in the data so we can get the max id
-    with open('files/cocktails.csv', 'r') as file:
+    with open('csv_files/cocktails.csv', 'r') as file:
         reader = csv.reader(file)
         data = list(reader)
         max_id = int(data[-1][0]) + 1
 
     #Check to make sure the name isnt a duplicate
-    with open('files/cocktails.csv', 'r') as file:
+    with open('csv_files/cocktails.csv', 'r') as file:
         reader = csv.reader(file)
         data = list(reader)
         for row in data:
@@ -28,7 +28,7 @@ def write_to_cocktail_csv(cocktail_to_add):
                 return -1
     
     #Open the file and write the new cocktail
-    with open('files/cocktails.csv', 'a') as file:
+    with open('csv_files/cocktails.csv', 'a') as file:
         writer = csv.writer(file)
         #Add "" around the description and directions so that commas don't mess up the csv
         cocktail_to_add.description = '"' + cocktail_to_add.description + '"'
@@ -41,14 +41,14 @@ def write_to_cocktail_csv(cocktail_to_add):
 
 def write_to_cocktail_ingredients_csv(cocktail_to_add, cocktail_id):
     #Open the file and write the new cocktail
-    with open('files/cocktail_ingredients.csv', 'a') as file:
+    with open('csv_files/cocktail_ingredients.csv', 'a') as file:
         writer = csv.writer(file)
         for ingredient in cocktail_to_add.cocktail_ingredients:
             writer.writerow([str(cocktail_id), ingredient.ingredient_name, ingredient.optional, ingredient.amount])
 
 def add_to_ingredients_csv(ingredient_to_add):
     #Open the file and load in the data
-    with open('files/all_ingredients.csv', 'r') as file:
+    with open('csv_files/all_ingredients.csv', 'r') as file:
         reader = csv.reader(file)
         data = list(reader)
 
@@ -65,7 +65,7 @@ def add_to_ingredients_csv(ingredient_to_add):
 
     #Sort alphabetically and write the data to the file
     data.sort()
-    with open('files/all_ingredients.csv', 'w') as file:
+    with open('csv_files/all_ingredients.csv', 'w') as file:
         writer = csv.writer(file)
         writer.writerow(['ingredient_name'])
         for row in data:

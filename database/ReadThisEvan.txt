@@ -1,0 +1,6 @@
+Current Status:
+- To Add Cocktails to the CSV launch the cocktail_add_gui.py and add them there
+- The other .py files are just there to make the GUI work
+
+Currently Working On:
+- Python script to read the CSVs and to push them to the MySQL database

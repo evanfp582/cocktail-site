@@ -12,7 +12,7 @@ from cocktail_add_utils import add_cocktail, add_to_ingredients_csv
 from PySide6.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QVBoxLayout, QHBoxLayout, QCheckBox, QComboBox, QPushButton, QMessageBox, QCompleter
 
 #Load in the ingredients
-ingredients_pd = pd.read_csv('files/all_ingredients.csv')
+ingredients_pd = pd.read_csv('csv_files/all_ingredients.csv')
 
 #Create a list of ingredients
 all_ingredients_list = ingredients_pd['ingredient_name'].tolist()

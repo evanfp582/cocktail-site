@@ -31,6 +31,8 @@ class CocktailCreator(QWidget):
         # Description
         self.description_label = QLabel("Description:")
         self.description_entry = QLineEdit()
+        #Fill the text box with "IBA Official Cocktail"
+        self.description_entry.setPlaceholderText("IBA Official Cocktail")
 
         # Directions
         self.directions_label = QLabel("Directions:")
@@ -39,6 +41,8 @@ class CocktailCreator(QWidget):
         #Wesbite Link
         self.website_link_label = QLabel("Website Link (Optional):")
         self.website_link_entry = QLineEdit()
+        #Make the default text "https://"
+        self.website_link_entry.setPlaceholderText("https://iba-world.com/iba-official-cocktail-list/")
 
         # Ingredients
         self.ingredients_label = QLabel("Ingredients:")

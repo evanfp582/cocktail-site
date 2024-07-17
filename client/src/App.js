@@ -13,9 +13,6 @@ function App() {
     const callBackendAPI = async () => {
       try {
         const response = await fetch("/api");
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
         const body = await response.json();
         setData(body.message);
       } catch (error) {

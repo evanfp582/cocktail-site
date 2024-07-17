@@ -12,8 +12,8 @@ import "./CreateDrinkFormStyles.css";
 function LoginForm() {
   const [loginData, setLoginData] = useState({
     username: '',
-    password: '',
   });
+  const [user, setUser] = useState("");
 
   const isValidForm = () => {
     return true
@@ -27,11 +27,10 @@ function LoginForm() {
   const handleLogin = async (e) => {
     e.preventDefault();
     // Perform login logic here with loginData
-    console.log('Login data:', loginData);
     try {
       axios.post("/Login", {loginData})
         .then(res => {
-          console.log(res.data);
+          setUser(res.data.message[0].name)
         })
     } catch (error) {
       console.error(error.message);
@@ -60,7 +59,7 @@ function LoginForm() {
         onChange={handleChange}
         required
       />
-      <TextField
+      {/* <TextField
         label="Password"
         variant="outlined"
         fullWidth
@@ -69,7 +68,9 @@ function LoginForm() {
         value={loginData.password}
         onChange={handleChange}
         required
-      />
+      /> */}
+      { user !== "" ? "You're logged in as " +user : ""}
+
       <Button type="submit" variant="contained" color="primary">
         Login
       </Button>

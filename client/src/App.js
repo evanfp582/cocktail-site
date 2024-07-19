@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Footer from "./components/Footer";
-import CreateDrinkForm from "./components/CreateDrinkForm";
+import { Outlet, Link } from "react-router-dom";import CreateDrinkForm from "./components/CreateDrinkForm";
 import SearchForDrinks from "./components/SearchForDrinks";
 import LoginForm from "./components/LoginForm";
 import Shelf from "./components/Shelf";
@@ -24,6 +24,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <li><Link to="/BartenderView">Bartender</Link></li>
+        <li><Link to="OrderView">Order</Link></li>
         <h1 className="App-title"> Cocktail Website</h1>
       </header>
       <div className="App-body">

@@ -144,3 +144,7 @@ dist
 
 # Build folder
 client/build
+
+# Not Exactly sure
+database_junk/__pycache__/cocktail_structs.cpython-311.pyc
+database_junk/__pycache__/cocktail_add_utils.cpython-311.pyc

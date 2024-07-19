@@ -12,7 +12,7 @@ from cocktail_add_utils import add_cocktail, add_to_ingredients_csv
 from PySide6.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QVBoxLayout, QHBoxLayout, QCheckBox, QComboBox, QPushButton, QMessageBox, QCompleter
 
 #Load in the ingredients
-ingredients_pd = pd.read_csv('files/all_ingredients.csv')
+ingredients_pd = pd.read_csv('csv_files/all_ingredients.csv')
 
 #Create a list of ingredients
 all_ingredients_list = ingredients_pd['ingredient_name'].tolist()
@@ -31,6 +31,8 @@ class CocktailCreator(QWidget):
         # Description
         self.description_label = QLabel("Description:")
         self.description_entry = QLineEdit()
+        #Fill the text box with "IBA Official Cocktail"
+        self.description_entry.setPlaceholderText("IBA Official Cocktail")
 
         # Directions
         self.directions_label = QLabel("Directions:")
@@ -39,6 +41,8 @@ class CocktailCreator(QWidget):
         #Wesbite Link
         self.website_link_label = QLabel("Website Link (Optional):")
         self.website_link_entry = QLineEdit()
+        #Make the default text "https://"
+        self.website_link_entry.setPlaceholderText("https://iba-world.com/iba-official-cocktail-list/")
 
         # Ingredients
         self.ingredients_label = QLabel("Ingredients:")

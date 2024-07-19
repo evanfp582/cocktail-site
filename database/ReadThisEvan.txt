@@ -1,0 +1,64 @@
+General Info:
+- To Add Cocktails to the CSV launch the cocktail_add_gui.py and add them there
+- The other .py files are just there to make the GUI work
+- The schema for the database is in the etc_files folder as a .png
+
+Currently Working On:
+- Python script to read the CSVs and to push them to the MySQL database
+
+
+
+
+
+
+TO REBUILD THE DATABASE FROM SCRATCH (Using MYSQL):
+---------------------------------------------------------------------------------------------------------------
+-- Create a new schema called cocktails_schema
+CREATE SCHEMA cocktails_schema;
+
+-- Use the cocktails_schema for further operations
+USE cocktails_schema;
+
+-- Create the table cocktail_ingredients within the cocktails_schema
+CREATE TABLE cocktail_ingredients (
+    ID INT AUTO_INCREMENT,
+    name VARCHAR(255),
+    PRIMARY KEY (ID)
+);
+
+-- Create the cocktail_recipes table
+CREATE TABLE cocktail_recipes (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) UNIQUE,
+    description VARCHAR(255),
+    directions TEXT,
+    source VARCHAR(255)
+);
+
+-- Create the cocktail_recipe_ingredients table
+CREATE TABLE cocktail_recipe_ingredients (
+    cocktail_id INT,
+    ingredient_id INT,
+    optional BOOLEAN,
+    amount VARCHAR(100),
+    PRIMARY KEY (cocktail_id, ingredient_id),
+    FOREIGN KEY (cocktail_id) REFERENCES cocktail_recipes(ID),
+    FOREIGN KEY (ingredient_id) REFERENCES cocktail_ingredients(ID)
+);
+
+-- Create the users table
+CREATE TABLE users (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) UNIQUE
+);
+
+-- Create the user_ingredients table
+CREATE TABLE user_ingredients (
+    user_id INT,
+    ingredient_id INT,
+    PRIMARY KEY (user_id, ingredient_id),
+    FOREIGN KEY (user_id) REFERENCES users(ID),
+    FOREIGN KEY (ingredient_id) REFERENCES cocktail_ingredients(ID)
+);
+
+

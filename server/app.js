@@ -1,18 +1,21 @@
 const { parse } = require("csv-parse");
 const fs = require("fs");
 const express = require("express");
-const app = express();
 var bodyParser=require("body-parser");
 const cors = require("cors");
-const port = process.env.PORT || 3000;
 const csv = require('csv-parser');
 const { Console } = require("console");
 const path = require("path");
+const mysql = require('mysql')
+require('dotenv').config();
 
 
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
+const app = express();
+const port = 5000;
+
+// var corsOptions = {
+//   origin: "http://localhost:8081"
+// };
 
 const countries = [
   { name: "Belgium", continent: "Europe" },
@@ -42,18 +45,82 @@ const countries = [
 ];
 
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+// Middleware
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json());
 
-app.get("/api", (req, res) => {
-  res.send({ message: "Server is Online" });
+/*
+  Actual DB interaction 
+*/
+const connection = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+})
+
+connection.connect(err => {
+  if (err) {
+    console.error('Error connecting to the database:', err);
+    return;
+  }
+  console.log('Connected to the database');
 });
 
-app.post("/CreateDrinkFormSubmit", (req, res) => {
-  console.log(req.body);
-  res.send({ message: "Submitted Drink" });
+// Define a route to fetch data
+app.get('/get_ingredients', (req, res) => {
+  const sql = 'SELECT * FROM cocktail_ingredients';
+
+  connection.query(sql, (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json(results);
+  });
+});
+
+// Get All cocktails
+app.get('/get_cocktails', (req, res) => {
+  const sql = `
+  SELECT 
+    cr.id,
+    cr.name AS cocktail_name,
+    GROUP_CONCAT(ci.name SEPARATOR ', ') AS ingredients
+  FROM 
+      cocktail_recipes cr
+  JOIN 
+      cocktail_recipe_ingredients cri ON cr.id = cri.cocktail_id
+  JOIN 
+      cocktail_ingredients ci ON cri.ingredient_id = ci.id
+  GROUP BY 
+      cr.id, cr.name;
+  `;
+
+  connection.query(sql, (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json(results);
+  });
 })
+
+//Get all ingredients
+app.get('/get_ingredients', (req, res) => {
+  const sql = `
+  SELECT cocktail_ingredients.ID, cocktail_ingredients.name
+  FROM cocktails_schemacocktail_ingredients;
+  `;
+
+  connection.query(sql, (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json(results);
+  });
+})
+
 
 /*
   Login function
@@ -74,6 +141,15 @@ app.post("/Login", (req, res) => {
   .on('end', () => {
     res.send({ message: result });
   })
+})
+
+app.get("/api", (req, res) => {
+  res.send({ message: "Server is Online" });
+});
+
+app.post("/CreateDrinkFormSubmit", (req, res) => {
+  console.log(req.body);
+  res.send({ message: "Submitted Drink" });
 })
 
 /*

@@ -7,19 +7,19 @@ const Shelf= () => {
   const [freshIngArray, setFreshIngArray] = useState([])
   const [ingredients, setIngredients] = useState([])
 
-  useEffect(() => {
-    const fetchShelf = async () => {
-      try {
-        axios.post("/shelf", {username: "0"})
-          .then(res => {
-            setIngredients(res.data.ingredients)
-          })
-      } catch (error) {
-        console.error(error.message);
-      }
-      };
-    fetchShelf();
-  }, [])
+  // useEffect(() => {
+  //   const fetchShelf = async () => {
+  //     try {
+  //       axios.post("/shelf", {username: "0"})
+  //         .then(res => {
+  //           setIngredients(res.data.ingredients)
+  //         })
+  //     } catch (error) {
+  //       console.error(error.message);
+  //     }
+  //     };
+  //   fetchShelf();
+  // }, [])
 
   return <>
     This is Shelf

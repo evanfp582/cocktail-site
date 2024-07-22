@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import axios from 'axios';
 import Footer from "./components/Footer";
 import { Outlet, Link } from "react-router-dom";import CreateDrinkForm from "./components/CreateDrinkForm";
 import SearchForDrinks from "./components/SearchForDrinks";
@@ -10,17 +11,15 @@ import Shelf from "./components/Shelf";
 function App() {
   const [data, setData] = useState(null);
   useEffect(() => {
-    const callBackendAPI = async () => {
-      try {
-        const response = await fetch("/api");
-        const body = await response.json();
-        setData(body.message);
-      } catch (error) {
-        console.error(error.message);
-      }
-    };
-    callBackendAPI();
+    axios.get('http://localhost:5000/api/data')
+      .then(response => {
+        setData(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the data!', error);
+      });
   }, []);
+  
   return (
     <div className="App">
       <header className="App-header">

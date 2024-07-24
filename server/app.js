@@ -58,7 +58,7 @@ const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  database: process.env.DB_DATABASE,
 })
 
 connection.connect(err => {
@@ -107,41 +107,45 @@ app.get('/get_cocktails', (req, res) => {
 })
 
 //Get all ingredients
-app.get('/get_ingredients', (req, res) => {
-  const sql = `
-  SELECT cocktail_ingredients.ID, cocktail_ingredients.name
-  FROM cocktails_schemacocktail_ingredients;
-  `;
+// app.get('/get_ingredients', (req, res) => {
+//   const sql = `
+//   SELECT cocktail_ingredients.ID, cocktail_ingredients.name
+//   FROM cocktails_schemacocktail_ingredients;
+//   `;
 
-  connection.query(sql, (err, results) => {
-    if (err) {
-      return res.status(500).json({ error: err.message });
-    }
-    res.json(results);
-  });
-})
+//   connection.query(sql, (err, results) => {
+//     if (err) {
+//       return res.status(500).json({ error: err.message });
+//     }
+//     res.json(results);
+//   });
+// })
 
+
+/*
+  Create Drink :)
+*/
 
 /*
   Login function
   Checks the users.csv for a match, if so return the {id, name}
   else ???
 */
-app.post("/Login", (req, res) => {
-  console.log(req.body);
-  const path = "../database_junk/files/users.csv"
-  result = []
-  fs.createReadStream(path)
-  .pipe(csv())
-  .on('data', (data) => {
-    if (data.name == req.body.loginData.username){
-        result.push(data)
-    }
-  })
-  .on('end', () => {
-    res.send({ message: result });
-  })
-})
+// app.post("/Login", (req, res) => {
+//   console.log(req.body);
+//   const path = "../database_junk/files/users.csv"
+//   result = []
+//   fs.createReadStream(path)
+//   .pipe(csv())
+//   .on('data', (data) => {
+//     if (data.name == req.body.loginData.username){
+//         result.push(data)
+//     }
+//   })
+//   .on('end', () => {
+//     res.send({ message: result });
+//   })
+// })
 
 app.get("/api", (req, res) => {
   res.send({ message: "Server is Online" });
@@ -158,37 +162,37 @@ app.post("/CreateDrinkFormSubmit", (req, res) => {
   With the small amount of data, this works, but in future
   TODO make this get after each search
 */
-app.get('/getAllDrinks', (req, res) => {
-  const results = []
-  const path = "../database_junk/files/cocktails.csv"
-  fs.createReadStream(path)
-  .pipe(csv())
-  .on('data', (data) => results.push(data))
-  .on('end', () => {
-    res.send({ message: results })
-  });
-})
+// app.get('/getAllDrinks', (req, res) => {
+//   const results = []
+//   const path = "../database_junk/files/cocktails.csv"
+//   fs.createReadStream(path)
+//   .pipe(csv())
+//   .on('data', (data) => results.push(data))
+//   .on('end', () => {
+//     res.send({ message: results })
+//   });
+// })
 
 /*
   Scans the shelf for things you own and returns them in an array
 */
-app.post("/shelf", (req, res) => {
-  console.log("shelp body", req.body);
-  const results = []
-  const path = "../database_junk/files/user_ingredients.csv"
-  fs.createReadStream(path)
-  .pipe(csv())
-  .on('data', (data) => {
-    console.log(data.user_id, req.body.username)
-    if (data.user_id == req.body.username){
-      results.push(data.ingredient_name)
-    }
-  })
-  .on('end', () => {
-    console.log(results)
-    res.send({ ingredients: results })
-  });
-})
+// app.post("/shelf", (req, res) => {
+//   console.log("shelp body", req.body);
+//   const results = []
+//   const path = "../database_junk/files/user_ingredients.csv"
+//   fs.createReadStream(path)
+//   .pipe(csv())
+//   .on('data', (data) => {
+//     console.log(data.user_id, req.body.username)
+//     if (data.user_id == req.body.username){
+//       results.push(data.ingredient_name)
+//     }
+//   })
+//   .on('end', () => {
+//     console.log(results)
+//     res.send({ ingredients: results })
+//   });
+// })
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
@@ -196,13 +200,13 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
   Function to get all the drinks
   Right now handled via hardcoded path to the cocktails.scv
 */
-function getAllDrinks() {
-  const results = [];
-  const path = "../database_junk/files/cocktails.csv"
-  fs.createReadStream(path)
-  .pipe(csv())
-  .on('data', (data) => results.push(data))
-  .on('end', () => {
-    console.log("Here: ", results)
-    return results
-  });}
+// function getAllDrinks() {
+//   const results = [];
+//   const path = "../database_junk/files/cocktails.csv"
+//   fs.createReadStream(path)
+//   .pipe(csv())
+//   .on('data', (data) => results.push(data))
+//   .on('end', () => {
+//     console.log("Here: ", results)
+//     return results
+//   });}

@@ -14,6 +14,7 @@ function CreateDrinkForm() {
     drinkName: '',
     instructions: '',
   });
+  const [ingredients, setIngredients] = useState([])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,6 +25,20 @@ function CreateDrinkForm() {
     setDrinkData({drinkName: '',
     instructions: ''})
   }
+
+  useEffect(() => {
+    const fetchShelf = async () => {
+      try {
+        axios.get("/get_cocktails")
+          .then(res => {
+            setIngredients(res.data.ingredients)
+          })
+      } catch (error) {
+        console.error(error.message);
+      }
+      };
+    fetchShelf();
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();

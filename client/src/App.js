@@ -9,27 +9,26 @@ import LoginForm from "./components/LoginForm";
 import Shelf from "./components/Shelf";
 
 function App() {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    axios.get('http://localhost:5000/api/data')
-      .then(response => {
-        setData(response.data);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the data!', error);
-      });
-  }, []);
+  // const [data, setData] = useState(null);
+  // useEffect(() => {
+  //   axios.get('http://localhost:5000/api/data')
+  //     .then(response => {
+  //       setData(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error('There was an error fetching the data!', error);
+  //     });
+  // }, []);
   
   return (
     <div className="App">
       <header className="App-header">
         <li><Link to="/BartenderView">Bartender</Link></li>
         <li><Link to="OrderView">Order</Link></li>
+        <li><Link to="/CreateCocktail">Create Cocktail</Link></li>
         <h1 className="App-title"> Cocktail Website</h1>
       </header>
       <div className="App-body">
-        <p>{data}</p>
-        <hr />
         <CreateDrinkForm />
         <hr />
         <SearchForDrinks />

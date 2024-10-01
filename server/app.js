@@ -147,9 +147,6 @@ app.get('/get_cocktails', (req, res) => {
 //   })
 // })
 
-app.get("/api", (req, res) => {
-  res.send({ message: "Server is Online" });
-});
 
 app.post("/CreateDrinkFormSubmit", (req, res) => {
   console.log(req.body);

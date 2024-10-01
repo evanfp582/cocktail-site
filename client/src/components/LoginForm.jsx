@@ -15,10 +15,6 @@ function LoginForm() {
   });
   const [user, setUser] = useState("");
 
-  const isValidForm = () => {
-    return true
-  }
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLoginData({ ...loginData, [name]: value });
@@ -38,16 +34,6 @@ function LoginForm() {
 
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Perform form-level validation
-    if (!isValidForm()) {
-      // Display error messages or prevent submission
-      return;
-    }
-    // Submit the form data
-  };
-
   return <div className='CreateDrinkForm-body'>
     <form onSubmit={handleLogin}>
       <TextField
@@ -59,16 +45,6 @@ function LoginForm() {
         onChange={handleChange}
         required
       />
-      {/* <TextField
-        label="Password"
-        variant="outlined"
-        fullWidth
-        name="password"
-        type="password"
-        value={loginData.password}
-        onChange={handleChange}
-        required
-      /> */}
       { user !== "" ? "You're logged in as " +user : ""}
 
       <Button type="submit" variant="contained" color="primary">

@@ -12,31 +12,6 @@ const handleChange = (e) => {
   setSearchInput(e.target.value);
 };
 
-// useEffect(() => {
-//   fetchData();
-// }, [])
-
-// const fetchData = async () => {
-//   try {
-//     const response = await fetch("/getAllDrinks");
-//     const drinks = await response.json();
-//     console.log(drinks)
-//     setDrinks(drinks.message);
-//   } catch (error) {
-//     console.error('Error fetching data:', error);
-//   }
-// };
-
-// useEffect(() => {
-//   if (searchInput.length > 0) {
-//     setMatching(drinks.filter((drink) => {
-//       var lowercase = drink.name.toLowerCase()
-//     return lowercase.match(searchInput.toLowerCase());
-//     }));
-//   }else {
-//     setMatching([])
-//   }
-// }, [drinks, searchInput])
 
 return <div>
     <input

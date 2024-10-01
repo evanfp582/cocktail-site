@@ -9,17 +9,6 @@ import LoginForm from "./components/LoginForm";
 import Shelf from "./components/Shelf";
 
 function App() {
-  // const [data, setData] = useState(null);
-  // useEffect(() => {
-  //   axios.get('http://localhost:5000/api/data')
-  //     .then(response => {
-  //       setData(response.data);
-  //     })
-  //     .catch(error => {
-  //       console.error('There was an error fetching the data!', error);
-  //     });
-  // }, []);
-  
   return (
     <div className="App">
       <header className="App-header">

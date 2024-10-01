@@ -153,15 +153,5 @@ let exampleDataJSON = {
     ]
 }
 
-{/* <List dense={true}>
-{drinkList.map((drink, index) => (
-  <ListItem>
-    <ListItemText
-      primary={drink.drink}
-      secondary={drink.subtext}
-    />
-  </ListItem>
-))}
-</List> */}
 
 export default OrderView

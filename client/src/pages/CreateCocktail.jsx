@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import AddIcon from '@mui/icons-material/Add';
 
-const OrderView= () => {
+const CreateDrink= () => {
   const [drinkQueue, setDrinkQueue] = useState([])
   const [drinkList, setDrinkList] = useState([])
   const [name, setName] = useState("")
@@ -38,41 +38,52 @@ const OrderView= () => {
 
   return <>
     <header className="App-header">
-        <h1 className="App-title"> Drink Order</h1>
+        <h1 className="App-title"> Drink Create</h1>
     </header>
-    <div className="App-body">
-      <h1>This is the Drink Ordering</h1>
-      <form>
-        <Stack spacing={3}>
-          <TextField required id="outlined-basic" label="Name of Drink" variant="outlined" />
-          <TextField
-            required
-            id="outlined-multiline-flexible"
-            label="Description"
-            multiline
-          />
-          <Box sx={{ border: 1 }}>
-            Test
-          </Box>
-          <Button variant="outlined" startIcon={<AddIcon />}>
-            Add Ingredient
-          </Button>
-          <TextField
-            required
-            id="outlined-multiline-flexible"
-            label="Instructions"
-            multiline
-          />
-          <Button variant="contained" endIcon={<SendIcon />}>
-            Submit
-          </Button>
-        </Stack>
-      </form>
-    </div>
+      <h1>This is the Drink Creation</h1>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center', // Horizontally center the Stack
+          alignItems: 'center',    // Vertically center the Stack
+        }}
+      >
+        <form>
+          <Stack
+            sx={{
+              width: '50vw', // 50% of the viewport width
+              border: '1px solid gray', // Optional, for visualization
+              padding: 2, // Optional, some padding around the Stack content
+            }}
+            spacing={2} // Optional, adjust the spacing between items in the Stack
+          >
+            <TextField required id="outlined-basic" label="Name of Drink" variant="outlined" />
+            <TextField
+              required
+              id="outlined-multiline-flexible"
+              label="Description"
+              rows={4}
+              multiline
+            />
+            <Button variant="outlined" startIcon={<AddIcon />}>
+              Add Ingredient
+            </Button>
+            <TextField
+              required
+              id="outlined-multiline-flexible"
+              label="Instructions"
+              multiline
+            />
+            <Button variant="contained" endIcon={<SendIcon />}>
+              Submit
+            </Button>
+          </Stack>
+        </form>
+      </Box>
   </>
 
 }
 
 
 
-export default OrderView
+export default CreateDrink

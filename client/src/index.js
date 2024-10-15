@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import BartenderView from "./pages/BartenderView"
 import OrderView from "./pages/OrderView"
+import SearchView from './pages/SearchView';
 import CreateCocktail from "./pages/CreateCocktail"
 import { disableReactDevTools } from '@fvilers/disable-react-devtools'
 
@@ -16,6 +17,7 @@ export default function Index() {
     <BrowserRouter>
       <Routes>
         <Route index element={<App />} />
+        <Route path="/SearchView" element={<SearchView />} />
         <Route path="/BartenderView" element={<BartenderView />} />
         <Route path="/OrderView" element={<OrderView />} />
         <Route path="/CreateCocktail" element={<CreateCocktail />} />

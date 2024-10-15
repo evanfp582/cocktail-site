@@ -15,6 +15,7 @@ function App() {
         <li><Link to="/BartenderView">Bartender</Link></li>
         <li><Link to="OrderView">Order</Link></li>
         <li><Link to="/CreateCocktail">Create Cocktail</Link></li>
+        <li><Link to="/SearchView">Search Page</Link></li>
         <h1 className="App-title"> Cocktail Website</h1>
       </header>
       <div className="App-body">
